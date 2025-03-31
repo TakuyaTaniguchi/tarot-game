@@ -1,0 +1,55 @@
+# Node.js dependencies
+node_modules
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+.pnpm-debug.log
+
+# Remix build output
+/build
+/public/build
+.cache
+/app/styles/tailwind.css
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Operating System Files
+Thumbs.db
+.directory
+
+# Testing
+/coverage
+/cypress/videos
+/cypress/screenshots
+
+# Debug logs
+*.log
+logs
+report.*.json
+
+# Service workers
+**/public/workbox-*.js
+**/public/sw.js
+
+# Typescript build info
+*.tsbuildinfo
+
+# Miscellaneous
+.serverless/
+.netlify/
+.vercel/
+.turbo/
+dist/
