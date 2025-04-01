@@ -5,8 +5,6 @@ import {
     Scripts,
 } from "@remix-run/react";
 
-const isReady: boolean = false;
-console.log(isReady);
 
 export default function App() {
     return (
