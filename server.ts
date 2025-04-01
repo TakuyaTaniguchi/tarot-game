@@ -1,4 +1,5 @@
 import { createRequestHandler } from "@remix-run/express";
+import { ServerBuild } from "@remix-run/node";
 import express from "express";
 import { createServer } from "vite";
 
@@ -18,12 +19,13 @@ const initServer = async () => {
       : express.static("build/client")
   );
 
-  const build = viteDevServer
+  // build関数の型を明示的に指定
+  const build: (() => Promise<ServerBuild>) | ServerBuild = viteDevServer
     ? () =>
         viteDevServer.ssrLoadModule(
           "virtual:remix/server-build"
-        )
-    : await import("./build/server/index.js");
+        ) as Promise<ServerBuild>
+    : await import("./build/server/index.js") as unknown as ServerBuild;
 
   app.all("*", createRequestHandler({ build }));
 
