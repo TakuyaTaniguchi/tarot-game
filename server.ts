@@ -1,5 +1,5 @@
 import { createRequestHandler } from "@remix-run/express";
-import { ServerBuild } from "@remix-run/node";
+import type { AppLoadContext, ServerBuild } from "@remix-run/node";
 import express from "express";
 import { createServer } from "vite";
 
@@ -27,7 +27,13 @@ const initServer = async () => {
         ) as Promise<ServerBuild>
     : await import("./build/server/index.js") as unknown as ServerBuild;
 
-  app.all("*", createRequestHandler({ build }));
+  app.all(
+    "*",
+    createRequestHandler({
+      build,
+      mode: process.env.NODE_ENV
+    })
+  );
 
   app.listen(3000, () => {
     console.log("App listening on http://localhost:3000");
