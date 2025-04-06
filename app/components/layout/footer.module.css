@@ -1,3 +1,154 @@
 .footer {
-    color: magenta;
+  background: linear-gradient(to right, #1a1a2e, #16213e, #0f3460);
+  color: #f0f0f0;
+  padding: 2rem;
+  text-align: center;
+  border-top: 2px solid #e94560;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+  margin-top: 3rem;
+}
+
+.footer::before, .footer::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23e94560' d='M32 8l8 16 16 8-16 8-8 16-8-16-16-8 16-8z'/%3E%3C/svg%3E");
+  background-size: contain;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.footer::before {
+  top: 20px;
+  left: 30px;
+  transform: rotate(-15deg);
+}
+
+.footer::after {
+  bottom: 20px;
+  right: 30px;
+  transform: rotate(15deg);
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.brand {
+  flex: 1;
+  min-width: 250px;
+}
+
+.brandName {
+  font-family: 'Georgia', serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(45deg, #e94560, #f9d423);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+}
+
+.brandDescription {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  color: #ccc;
+}
+
+.navigation {
+  flex: 1;
+  min-width: 200px;
+}
+
+.navigationTitle {
+  font-size: 1.2rem;
+  color: #e94560;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.navigationList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigationItem {
+  margin-bottom: 0.5rem;
+}
+
+.navigationLink {
+  color: #f0f0f0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 0.9rem;
+  display: inline-block;
+}
+
+.navigationLink:hover {
+  color: #e94560;
+}
+
+.social {
+  flex: 1;
+  min-width: 200px;
+}
+
+.socialTitle {
+  font-size: 1.2rem;
+  color: #e94560;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialIcon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: #f0f0f0;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.socialIcon:hover {
+  background: #e94560;
+  transform: translateY(-5px);
+}
+
+.copyright {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .socialIcons {
+    justify-content: center;
+  }
 }

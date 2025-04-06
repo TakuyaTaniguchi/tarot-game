@@ -1,3 +1,79 @@
 .header {
-    color: orange;
+  background: linear-gradient(to right, #1a1a2e, #16213e, #0f3460);
+  color: #f0f0f0;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  border-bottom: 2px solid #e94560;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before, .header::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23e94560' d='M32 8l8 16 16 8-16 8-8 16-8-16-16-8 16-8z'/%3E%3C/svg%3E");
+  background-size: contain;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.header::before {
+  top: 10px;
+  left: 20px;
+  transform: rotate(-15deg);
+}
+
+.header::after {
+  bottom: 10px;
+  right: 20px;
+  transform: rotate(15deg);
+}
+
+.logo {
+  font-family: 'Georgia', serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+  background: linear-gradient(45deg, #e94560, #f9d423);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.navLink {
+  color: #f0f0f0;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-size: 1.1rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navLink:hover {
+  color: #e94560;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #e94560;
+  transition: width 0.3s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
 }
