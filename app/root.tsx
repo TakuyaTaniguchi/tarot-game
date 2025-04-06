@@ -11,8 +11,6 @@ import { Footer } from "./components/layout/footer";
 
 // グローバルスタイルシートを読み込む
 import { LinksFunction } from "@remix-run/node";
-import globalStyles from "./styles/global.css";
-import homeStyles from "./styles/home.css";
 
 export const links: LinksFunction = () => [
   {
@@ -21,11 +19,11 @@ export const links: LinksFunction = () => [
   },
   {
     rel: "stylesheet",
-    href: globalStyles
+    href: "/styles/global.css" // 公開ディレクトリ内のCSSを参照
   },
   {
     rel: "stylesheet",
-    href: homeStyles
+    href: "/styles/home.css"   // 公開ディレクトリ内のCSSを参照
   }
 ];
 
