@@ -30,6 +30,7 @@ export function CardsPage() {
   console.log("Loader data:", data);
   
   // データが存在するか確認してから分解
+
   const cards = data?.cards?.cards || [];
 
   return (
