@@ -1,7 +1,11 @@
+import React from "react";
+import styles from './card.module.css';
 
-export const card = () =>{
+export type CardProps = {}
+
+export const card:React.FC<CardProps> = () =>{
     return (
-        <div>
+        <div className={styles.wrapper}>
             カード
         </div>
     )
